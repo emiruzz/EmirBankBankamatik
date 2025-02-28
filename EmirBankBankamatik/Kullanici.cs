@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace EmirBankBankamatik
 {
-    internal class Kullanici
+    public class Kullanici
     {
-
+        public decimal Bakiye { get; set; }
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
 
-        public Kullanici (string kullaniciAdi, string sifre)
+        public Kullanici (string kullaniciAdi, string sifre,decimal bakiye)
         {
             KullaniciAdi = kullaniciAdi;
             Sifre = sifre;
+            Bakiye = bakiye;
         }
     }
 }

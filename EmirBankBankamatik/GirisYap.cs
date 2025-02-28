@@ -12,12 +12,9 @@ namespace EmirBankBankamatik
 {
     public partial class GirisYap : Form
     {
-        private decimal _bakiye;
-
-        public GirisYap(decimal bakiye)
+        public GirisYap()
         {
             InitializeComponent();
-            _bakiye = bakiye;
         }
 
         /// <summary>
@@ -51,7 +48,7 @@ namespace EmirBankBankamatik
             {
                 MessageBox.Show("Giriş başarılı! Hoşgeldiniz " + kullanici.KullaniciAdi);
                 this.Hide();
-                AnaEkran anaEkran = new AnaEkran(_bakiye);
+                AnaEkran anaEkran = new AnaEkran(kullanici);
                 anaEkran.Show();
             }
             else

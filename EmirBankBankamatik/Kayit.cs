@@ -175,12 +175,12 @@ namespace EmirBankBankamatik
                 {
                     if (txtSifre.Text == txtSifreTekrar.Text)
                     {
-                        Kullanici yeniKullanici = new Kullanici(txtKullaniciAdi.Text, txtSifre.Text);
+                        Kullanici yeniKullanici = new Kullanici(txtKullaniciAdi.Text, txtSifre.Text,1000);
                         KullaniciVeriTabani.KullaniciListesi.Add(yeniKullanici);
 
                         MessageBox.Show("Kaydınız başarıyla oluşturuldu. Emirbank ailesine hoşgeldiniz!");
                         this.Hide();
-                        GirisYap girisYap = new GirisYap(1000);
+                        GirisYap girisYap = new GirisYap();
                         girisYap.Show();
                     }
                     else

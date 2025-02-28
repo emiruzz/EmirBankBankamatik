@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace EmirBankBankamatik
 {
-    public  class Bankamatik
+    public class Bankamatik
     {
-        private decimal _bakiye;
+        private readonly Kullanici _kullanici;
 
-        public Bankamatik(decimal baslangicBakiyesi)
+        public Bankamatik(Kullanici kullanici,decimal baslangicBakiyesi)
         {
-            _bakiye = baslangicBakiyesi;
+            _kullanici = kullanici;
+            _kullanici.Bakiye = baslangicBakiyesi;
+            
         }
 
         public decimal Bakiye
         {
-            get { return _bakiye; }
-            private set { _bakiye = value; } // Dışarıdan direkt değiştirilmesini önlüyoruz
+            get { return _kullanici.Bakiye; }
+            private set { _kullanici.Bakiye = value; } // Dışarıdan direkt değiştirilmesini önlüyoruz
         }
 
         public bool ParaCek(decimal cekilecekTutar, out string mesaj)
@@ -29,14 +31,14 @@ namespace EmirBankBankamatik
                 return false;
             }
 
-            if (cekilecekTutar > _bakiye)
+            if (cekilecekTutar > _kullanici.Bakiye)
             {
                 mesaj = "Yetersiz bakiye!";
                 return false;
             }
 
-            _bakiye -= cekilecekTutar;
-            mesaj = $"İşleminiz gerçekleştirildi!\nÇekilen Tutar: {cekilecekTutar} ₺, Güncel bakiyeniz: {_bakiye} ₺";
+            _kullanici.Bakiye -= cekilecekTutar;
+            mesaj = $"İşleminiz gerçekleştirildi!\nÇekilen Tutar: {cekilecekTutar} ₺, Güncel bakiyeniz: {_kullanici.Bakiye} ₺";
             return true;
         }
     }

@@ -12,12 +12,12 @@ namespace EmirBankBankamatik
 {
     public partial class ParaCek : Form
     {
-        private  decimal _bakiye;
+        private readonly Kullanici _kullanici;
 
-        public ParaCek(decimal bakiye)
+        public ParaCek(Kullanici kullanici)
         {
             InitializeComponent();
-            _bakiye = bakiye;
+            _kullanici = kullanici;
         }
 
         private void btnParayiCek_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace EmirBankBankamatik
 
                 if (decimal.TryParse(girilenTutar, out decimal cekilecekTutar))
                 {
-                    if(cekilecekTutar>_bakiye)
+                    if(cekilecekTutar>_kullanici.Bakiye)
                     {
                         MessageBox.Show("Yetersiz bakiye!");
                         return;
@@ -51,13 +51,13 @@ namespace EmirBankBankamatik
                         return;
                     }
 
-                    MessageBox.Show($"İşleminiz gerçekleştirildi!\nÇekilen Tutar: {cekilecekTutar} ₺, Güncel bakiyeniz: {_bakiye-cekilecekTutar} ₺");
+                    MessageBox.Show($"İşleminiz gerçekleştirildi!\nÇekilen Tutar: {cekilecekTutar} ₺, Güncel bakiyeniz: {_kullanici.Bakiye-cekilecekTutar} ₺");
 
-                    _bakiye -= cekilecekTutar;
+                    _kullanici.Bakiye -= cekilecekTutar;
 
                     this.Hide();
 
-                    AnaEkran form1 = new AnaEkran(_bakiye);
+                    AnaEkran form1 = new AnaEkran(_kullanici);
                     form1.ShowDialog();
 
                     this.Close();

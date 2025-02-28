@@ -12,13 +12,13 @@ namespace EmirBankBankamatik
 {
     public partial class ParaYatir : Form
     {
-        private decimal _bakiye;
+        private readonly Kullanici _kullanici;
 
-        public ParaYatir(decimal bakiye)
+        public ParaYatir(Kullanici kullanici)
         {
-            
+
             InitializeComponent();
-            _bakiye = bakiye;
+            _kullanici = kullanici;
         }
 
         private void btnParayiYatir_Click(object sender, EventArgs e)
@@ -47,12 +47,12 @@ namespace EmirBankBankamatik
                         return;
                     }
 
-                    MessageBox.Show($"İşleminiz gerçekleştirildi!\nYatırılan Tutar: {yatirilacakTutar} ₺, Güncel bakiyeniz: {_bakiye + yatirilacakTutar} ₺");
-                    _bakiye += yatirilacakTutar;
+                    MessageBox.Show($"İşleminiz gerçekleştirildi!\nYatırılan Tutar: {yatirilacakTutar} ₺, Güncel bakiyeniz: {_kullanici.Bakiye + yatirilacakTutar} ₺");
+                    _kullanici.Bakiye += yatirilacakTutar;
 
                     this.Hide();
 
-                    AnaEkran form1 = new AnaEkran(_bakiye);
+                    AnaEkran form1 = new AnaEkran(_kullanici);
                     form1.ShowDialog();
 
                     this.Close();
