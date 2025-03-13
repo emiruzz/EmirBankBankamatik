@@ -95,7 +95,7 @@
             btnParayiCek.UseVisualStyleBackColor = true;
             btnParayiCek.Click += btnParayiCek_Click;
             // 
-            // Form3
+            // ParaCek
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -106,8 +106,9 @@
             Controls.Add(txtCekilecekTutar);
             Controls.Add(lblCekilecekTutar);
             Controls.Add(lblEmirBank);
-            Name = "Form3";
-            Text = "Form3";
+            Name = "ParaCek";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             ResumeLayout(false);
             PerformLayout();
         }

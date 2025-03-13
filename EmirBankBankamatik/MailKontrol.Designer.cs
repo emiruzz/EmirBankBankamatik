@@ -99,7 +99,8 @@
             Controls.Add(lblMail);
             Controls.Add(lblEmirBank);
             Name = "MailKontrol";
-            Text = "Mail Doğrulama";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmirBankBankamatik
 {
-    internal class KullaniciVeriTabani
+    public class KullaniciVeriTabani
     {
         public static List<Kullanici> KullaniciListesi = new List<Kullanici>();
     }

@@ -221,7 +221,8 @@
             Controls.Add(btnKayit);
             Controls.Add(lblEmirBank);
             Name = "Kayit";
-            Text = "Emirbank";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             Load += Kayit_Load;
             pnlKayit.ResumeLayout(false);
             pnlKayit.PerformLayout();

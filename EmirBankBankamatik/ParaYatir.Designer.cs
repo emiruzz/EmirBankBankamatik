@@ -57,7 +57,6 @@
             lblYatirilacakTutar.Size = new Size(356, 28);
             lblYatirilacakTutar.TabIndex = 4;
             lblYatirilacakTutar.Text = "Lütfen yatırmak istediğiniz tutarı giriniz.";
-           
             // 
             // txtYatirilacakTutar
             // 
@@ -96,7 +95,7 @@
             btnParayiYatir.UseVisualStyleBackColor = true;
             btnParayiYatir.Click += btnParayiYatir_Click;
             // 
-            // Form2
+            // ParaYatir
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -107,8 +106,9 @@
             Controls.Add(txtYatirilacakTutar);
             Controls.Add(lblYatirilacakTutar);
             Controls.Add(lblEmirBank);
-            Name = "Form2";
-            Text = "Form2";
+            Name = "ParaYatir";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -204,7 +204,8 @@
             Controls.Add(btnParaYatir);
             Controls.Add(btnParaCek);
             Name = "AnaEkran";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             ResumeLayout(false);
             PerformLayout();
         }

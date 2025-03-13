@@ -148,7 +148,8 @@
             Controls.Add(lblHosgeldiniz);
             Controls.Add(lblEmirBank);
             Name = "GirisYap";
-            Text = "Emirbank";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "EmirBank";
             ResumeLayout(false);
             PerformLayout();
         }
