@@ -102,7 +102,7 @@ namespace EmirBankBankamatik
             try
             {
                 string gonderenMail = "emiruz.yzl@gmail.com";
-                string gonderenSifre = "tkzljvyzlxzesuxx";
+                string gonderenSifre = "***************";
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Credentials = new NetworkCredential(gonderenMail, gonderenSifre);
